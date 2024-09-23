@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 4</title>
+        <link rel="stylesheet" href="lab4.css">
+        
+        <script type="text/javascript">
+            function nameValidation() {
+                var name =  document.getElementById('name').value;
+                alert("Hi " + name + "!")
+            }
+            
+            function changeColor() {
+                if(document.getElementById('body1').style.backgroundColor == 'lightblue') {
+                    document.getElementById('body1').style.backgroundColor = 'green';
+                } else {
+                    document.getElementById('body1').style.backgroundColor = 'lightblue';
+                }
+            }
+
+            function checkText() {
+                var inputText = document.getElementById("textTester").value;
+                var validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                if (validationRegex.test(inputText)) {
+                alert(" No special characters allowed!");
+                } 
+            }
+
+            function changeText() {
+                if (document.getElementById('header').innerHTML != "INST377 - Lab 4 - Add Text" ) { 
+                var currentValue =  document.getElementById('header').innerHTML;
+                assignText = currentValue + " - Add Text";
+                document.getElementById('header').innerHTML = assignText;
+            }
+        }
+
+
+        </script>
+        </script>
+    </head>
+
+    <body id="body1">
+        <!-- Header -->
+        <header>
+            <h1 id="header">INST377 - Lab 4</h1>
+        </header>
+    
+<!-- Navigation -->
+        
+
+        <!-- main text area -->
+        <div class="main-container">
+            
+            <div class="content-area">   
+                
+                <form onsubmit="nameValidation()" action="">
+                    <label>Name:</label>
+                    <input id="name" type="text" required>
+                    <input type="submit" value="Alert Me!">
+                </form>
+
+
+
+            </div>
+                  
+            <div class="content-area">   
+            
+                <button id="colorButton" onclick="changeColor()"> 
+                    Change Color
+                </button>
+            </div>
+        </div>
+            <div class="main-container">
+
+                <div class="content-area">   
+                    <form onsubmit="checkText()">
+                        <label>Text Tester:</label>
+                        <input id="textTester" type="text" required>
+        
+                        <input type="submit" value="Validate Text">
+                    </form>
+                </div>
+                
+                <div class="content-area">   
+
+                    <button onclick="changeText()">
+                       Add Text
+                    </button>
+                </div>
+        </div>
+        
+
+    </body>
+    
+   
+
+</html>
+
